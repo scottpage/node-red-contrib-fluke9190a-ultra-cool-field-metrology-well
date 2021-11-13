@@ -2,12 +2,14 @@
   "name": "node-red-fluke-9190a",
   "version": "0.1.0",
   "description": "Node-RED node to control and monitor a Fluke 9190A Ultra-Cool Field Metrology Well.",
-  "types": "dist/index.d.ts",
   "scripts": {
-    "clean": "rm -r ./build",
+    "clean:build": "rm -rf ./build",
+    "clean:dist": "rm -rf ./dist",
+    "clean": "npm run clean:build && npm run clean:dist",
+    "rename:build": "mv build dist",
     "build:typescript": "tsc",
-    "build:dist": "node ./build/compile.js",
-    "build": "npm run clean && npm run build:typescript && npm run build:dist",
+    "build:run-compile": "node ./build/compile.js",
+    "build": "npm run clean && npm run build:typescript && npm run build:run-compile && npm run rename:build",
     "start": "",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

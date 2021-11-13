@@ -2,9 +2,12 @@ import fs from 'fs';
 import path from 'path';
 import Mustache from 'mustache';
 
+const BUILD_TO_DIST_COPY_EXCLUDE_FILES_NAMES = ['compile.d.ts', 'compile.d.ts.map', 'compile.js', 'compile.js.map', 'node-red-fluke-9190a-frontend.js'];
+
 const MODULE_ROOT_PATH = path.join(__dirname, '..');
 const ASSETS_ROOT_DIR_PATH = path.join(MODULE_ROOT_PATH, 'assets');
 const BUILD_ROOT_DIR_PATH = path.join(MODULE_ROOT_PATH, 'build');
+
 const SRC_ROOT_DIR_PATH = path.join(MODULE_ROOT_PATH, 'src');
 const PACKAGE_JSON_SRC_FILE_PATH = path.join(ASSETS_ROOT_DIR_PATH, 'package.json');
 const PACKAGE_JSON_DST_FILE_PATH = path.join(BUILD_ROOT_DIR_PATH, 'package.json');
@@ -21,12 +24,14 @@ const readSourceFile = async (filePath: string) => {
 const readSourceFrontendHtmlFile = async () => readSourceFile(FRONTEND_HTML_SRC_FILE_PATH);
 const readSourceFrontendJSFile = async () => readSourceFile(FRONTEND_JS_SRC_FILE_PATH);
 
-const injectFrontendHtmlScript = async (htmlContents: string, jsContents: string) => {
-  jsContents = jsContents.replace('Object.defineProperty(exports, "__esModule", { value: true });', '');
+const injectFrontendHtmlScript = async () => {
+  let frontendJSFileContents = await readSourceFrontendJSFile();
+  const frontendHtmlFileContents = await readSourceFrontendHtmlFile();
+  frontendJSFileContents = frontendJSFileContents.replace('Object.defineProperty(exports, "__esModule", { value: true });', '');
   const view = {
-    source: jsContents
+    source: frontendJSFileContents
   };
-  const output = Mustache.render(htmlContents, view);
+  const output = Mustache.render(frontendHtmlFileContents, view);
   return output;
 };
 
@@ -38,12 +43,18 @@ const copyPackageJsonAssetFileToBuild = async () => {
   await fs.promises.copyFile(PACKAGE_JSON_SRC_FILE_PATH, PACKAGE_JSON_DST_FILE_PATH);
 };
 
+const deleteBuildExcludeFiles = async () => {
+  for (const fileNameToRemove of BUILD_TO_DIST_COPY_EXCLUDE_FILES_NAMES) {
+    const fileNameToRemoveFullPath = path.join(BUILD_ROOT_DIR_PATH, fileNameToRemove);
+    await fs.promises.rm(fileNameToRemoveFullPath);
+  }
+};
+
 const run = async () => {
-  let frontendHtmlFileContents = await readSourceFrontendHtmlFile();
-  const frontendJSFileContents = await readSourceFrontendJSFile();
-  frontendHtmlFileContents = await injectFrontendHtmlScript(frontendHtmlFileContents, frontendJSFileContents);
+  const frontendHtmlFileContents = await injectFrontendHtmlScript();
   await saveFrontendHtmlFileToBuild(frontendHtmlFileContents);
   await copyPackageJsonAssetFileToBuild();
+  await deleteBuildExcludeFiles();
 };
 
 run().catch((error) => {
