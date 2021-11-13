@@ -3,11 +3,6 @@
   "version": "0.1.0",
   "description": "Node-RED node to control and monitor a Fluke 9190A Ultra-Cool Field Metrology Well.",
   "type": "module",
-  "scripts": {
-    "build": "",
-    "start": "",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/scottpage/node-red-fluke-9190a.git"
