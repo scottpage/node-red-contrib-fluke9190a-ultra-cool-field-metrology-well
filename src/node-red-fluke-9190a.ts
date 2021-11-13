@@ -17,5 +17,5 @@ module.exports = function (RED: NodeAPI<SettingsWithData>) {
       this.send(msg);
     });
   }
-  RED.nodes.registerType('node-red-fluke9190a-ultra-cool-field-metrology-well', CreateFluke9190ANode);
+  RED.nodes.registerType('node-red-contrib-fluke9190a-ultra-cool-field-metrology-well', CreateFluke9190ANode);
 };

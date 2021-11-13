@@ -7,7 +7,7 @@ const BUILD_TO_DIST_COPY_EXCLUDE_FILES_NAMES = [
   'compile.d.ts.map',
   'compile.js',
   'compile.js.map',
-  'node-red-fluke9190a-ultra-cool-field-metrology-well-frontend.js'
+  'node-red-contrib-fluke9190a-ultra-cool-field-metrology-well-frontend.js'
 ];
 
 const MODULE_ROOT_PATH = path.join(__dirname, '..');
@@ -17,9 +17,9 @@ const BUILD_ROOT_DIR_PATH = path.join(MODULE_ROOT_PATH, 'build');
 const SRC_ROOT_DIR_PATH = path.join(MODULE_ROOT_PATH, 'src');
 const PACKAGE_JSON_SRC_FILE_PATH = path.join(ASSETS_ROOT_DIR_PATH, 'package.json');
 const PACKAGE_JSON_DST_FILE_PATH = path.join(BUILD_ROOT_DIR_PATH, 'package.json');
-const FRONTEND_HTML_SRC_FILE_PATH = path.join(SRC_ROOT_DIR_PATH, 'node-red-fluke9190a-ultra-cool-field-metrology-well.hbs');
-const FRONTEND_HTML_DST_FILE_PATH = path.join(BUILD_ROOT_DIR_PATH, 'node-red-fluke9190a-ultra-cool-field-metrology-well.html');
-const FRONTEND_JS_SRC_FILE_PATH = path.join(BUILD_ROOT_DIR_PATH, 'node-red-fluke9190a-ultra-cool-field-metrology-well-frontend.js');
+const FRONTEND_HTML_SRC_FILE_PATH = path.join(SRC_ROOT_DIR_PATH, 'node-red-contrib-fluke9190a-ultra-cool-field-metrology-well.hbs');
+const FRONTEND_HTML_DST_FILE_PATH = path.join(BUILD_ROOT_DIR_PATH, 'node-red-contrib-fluke9190a-ultra-cool-field-metrology-well.html');
+const FRONTEND_JS_SRC_FILE_PATH = path.join(BUILD_ROOT_DIR_PATH, 'node-red-contrib-fluke9190a-ultra-cool-field-metrology-well-frontend.js');
 
 const readSourceFile = async (filePath: string) => {
   const frontendHtmlFileContentsBuffer = await fs.promises.readFile(filePath);

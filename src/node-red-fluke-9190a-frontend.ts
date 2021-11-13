@@ -2,7 +2,7 @@ import { EditorRED } from 'node-red';
 
 declare const RED: EditorRED;
 
-RED.nodes.registerType('node-red-fluke9190a-ultra-cool-field-metrology-well', {
+RED.nodes.registerType('node-red-contrib-fluke9190a-ultra-cool-field-metrology-well', {
   category: 'function',
   color: '#a6bbcf',
   defaults: {
@@ -12,6 +12,6 @@ RED.nodes.registerType('node-red-fluke9190a-ultra-cool-field-metrology-well', {
   outputs: 1,
   icon: 'file.png',
   label: function () {
-    return this.name || 'node-red-fluke9190a-ultra-cool-field-metrology-well';
+    return this.name || 'node-red-contrib-fluke9190a-ultra-cool-field-metrology-well';
   }
 });

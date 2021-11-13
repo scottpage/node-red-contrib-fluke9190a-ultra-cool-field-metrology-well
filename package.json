@@ -1,5 +1,5 @@
 {
-  "name": "node-red-fluke9190a-ultra-cool-field-metrology-well",
+  "name": "node-red-contrib-fluke9190a-ultra-cool-field-metrology-well",
   "version": "0.1.0",
   "description": "Node-RED node to control and monitor a Fluke 9190A Ultra-Cool Field Metrology Well.",
   "scripts": {
@@ -15,19 +15,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/scottpage/node-red-fluke9190a-ultra-cool-field-metrology-well.git"
+    "url": "git+https://github.com/scottpage/node-red-contrib-fluke9190a-ultra-cool-field-metrology-well.git"
   },
   "keywords": [],
   "author": {
     "name": "Scott Page",
     "email": "email@domain.com",
-    "url": "https://github.com/scottpage/node-red-fluke9190a-ultra-cool-field-metrology-well"
+    "url": "https://github.com/scottpage/node-red-contrib-fluke9190a-ultra-cool-field-metrology-well"
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/scottpage/node-red-fluke9190a-ultra-cool-field-metrology-well/issues"
+    "url": "https://github.com/scottpage/node-red-contrib-fluke9190a-ultra-cool-field-metrology-well/issues"
   },
-  "homepage": "https://github.com/scottpage/node-red-fluke9190a-ultra-cool-field-metrology-well#readme",
+  "homepage": "https://github.com/scottpage/node-red-contrib-fluke9190a-ultra-cool-field-metrology-well#readme",
   "devDependencies": {
     "@types/mustache": "^4.1.2",
     "@types/node-red": "^1.1.1",
