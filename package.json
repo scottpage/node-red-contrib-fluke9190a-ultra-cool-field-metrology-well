@@ -23,5 +23,9 @@
   "bugs": {
     "url": "https://github.com/scottpage/node-red-fluke-9190a/issues"
   },
-  "homepage": "https://github.com/scottpage/node-red-fluke-9190a#readme"
+  "homepage": "https://github.com/scottpage/node-red-fluke-9190a#readme",
+  "devDependencies": {
+    "@types/node-red": "^1.1.1",
+    "mustache": "^4.2.0"
+  }
 }

@@ -1,13 +1,17 @@
-RED.nodes.registerType("lower-case", {
-  category: "function",
-  color: "#a6bbcf",
+import { EditorRED } from 'node-red';
+
+declare const RED: EditorRED;
+
+RED.nodes.registerType('node-red-fluke-9190a', {
+  category: 'function',
+  color: '#a6bbcf',
   defaults: {
-    name: { value: "" },
+    name: { value: '' }
   },
   inputs: 1,
   outputs: 1,
-  icon: "file.png",
+  icon: 'file.png',
   label: function () {
-    return this.name || "lower-case";
-  },
+    return this.name || 'node-red-fluke-9190a';
+  }
 });
