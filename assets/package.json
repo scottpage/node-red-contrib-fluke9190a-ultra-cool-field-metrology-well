@@ -1,26 +1,26 @@
 {
-  "name": "node-red-fluke9190a",
+  "name": "node-red-fluke-9190a",
   "version": "0.1.0",
   "description": "Node-RED node to control and monitor a Fluke 9190A Ultra-Cool Field Metrology Well.",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/scottpage/node-red-fluke9190a.git"
+    "url": "git+https://github.com/scottpage/node-red-fluke-9190a.git"
   },
   "keywords": [],
   "author": {
     "name": "Scott Page",
     "email": "email@domain.com",
-    "url": "https://github.com/scottpage/node-red-fluke9190a"
+    "url": "https://github.com/scottpage/node-red-fluke-9190a"
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/scottpage/node-red-fluke9190a/issues"
+    "url": "https://github.com/scottpage/node-red-fluke-9190a/issues"
   },
-  "homepage": "https://github.com/scottpage/node-red-fluke9190a#readme",
+  "homepage": "https://github.com/scottpage/node-red-fluke-9190a#readme",
   "node-red": {
     "nodes": {
-      "node-red-fluke9190a": "node-red-fluke9190a"
+      "node-red-fluke-9190a": "node-red-fluke-9190a"
     }
   }
 }

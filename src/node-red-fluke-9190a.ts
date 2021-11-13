@@ -17,5 +17,5 @@ module.exports = function (RED: NodeAPI<SettingsWithData>) {
       this.send(msg);
     });
   }
-  RED.nodes.registerType('node-red-fluke9190a', CreateFluke9190ANode);
+  RED.nodes.registerType('node-red-fluke-9190a', CreateFluke9190ANode);
 };
