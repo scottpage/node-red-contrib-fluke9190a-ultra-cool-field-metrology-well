@@ -4,11 +4,10 @@
   "description": "Node-RED node to control and monitor a Fluke 9190A Ultra-Cool Field Metrology Well.",
   "types": "dist/index.d.ts",
   "scripts": {
-    "copy-assets:packagejson": "cp ./assets/package.json ./build/package.json",
-    "copy-assets:frontend-html": "cp ./src/node-red-fluke-9190a.html ./build/node-red-fluke-9190a.html",
-    "copy-assets": "npm run copy-assets:packagejson && npm run copy-assets:frontend-html",
+    "clean": "rm -r ./build",
     "build:typescript": "tsc",
-    "build": "npm run build:typescript && rename-sources && npm run copy-assets",
+    "build:dist": "node ./build/compile.js",
+    "build": "npm run clean && npm run build:typescript && npm run build:dist",
     "start": "",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
