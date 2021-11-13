@@ -5,7 +5,11 @@
   "types": "dist/index.d.ts",
   "type": "module",
   "scripts": {
-    "build": "",
+    "copy-assets:packagejson": "cp ./assets/package.json ./build/package.json",
+    "copy-assets:frontend-html": "cp ./src/node-red-fluke-9190a.html ./build/node-red-fluke-9190a.html",
+    "copy-assets": "npm run copy-assets:packagejson && npm run copy-assets:frontend-html",
+    "build:typescript": "tsc",
+    "build": "npm run build:typescript && rename-sources && npm run copy-assets",
     "start": "",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
