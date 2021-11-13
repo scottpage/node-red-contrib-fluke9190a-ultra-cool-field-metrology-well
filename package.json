@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "description": "Node-RED node to control and monitor a Fluke 9190A Ultra-Cool Field Metrology Well.",
   "types": "dist/index.d.ts",
-  "type": "module",
   "scripts": {
     "copy-assets:packagejson": "cp ./assets/package.json ./build/package.json",
     "copy-assets:frontend-html": "cp ./src/node-red-fluke-9190a.html ./build/node-red-fluke-9190a.html",
@@ -29,6 +28,7 @@
   },
   "homepage": "https://github.com/scottpage/node-red-fluke-9190a#readme",
   "devDependencies": {
+    "@types/mustache": "^4.1.2",
     "@types/node-red": "^1.1.1",
     "mustache": "^4.2.0"
   }
