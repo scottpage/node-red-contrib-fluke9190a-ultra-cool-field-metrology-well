@@ -17,7 +17,9 @@
     "type": "git",
     "url": "git+https://github.com/scottpage/node-red-contrib-fluke9190a-ultra-cool-field-metrology-well.git"
   },
-  "keywords": [],
+  "keywords": [
+    "node-red"
+  ],
   "author": {
     "name": "Scott Page",
     "email": "email@domain.com",
