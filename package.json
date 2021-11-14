@@ -12,7 +12,7 @@
     "build:typescript": "tsc",
     "build:run-compile": "node ./build/compile.js",
     "build": "npm run clean && npm run build:typescript && npm run build:run-compile && npm run rename:build",
-    "publish": "cd dist && npm publish",
+    "publish-dist": "cd dist && npm publish",
     "start": "",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
