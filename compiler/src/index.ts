@@ -2,18 +2,17 @@ import fs from 'fs';
 import path from 'path';
 import Mustache from 'mustache';
 
-const BUILD_TO_DIST_COPY_EXCLUDE_FILES_NAMES = ['compile.d.ts', 'compile.d.ts.map', 'compile.js', 'compile.js.map', 'node-red-contrib-fluke9190a-frontend.js'];
+const BUILD_TO_DIST_COPY_EXCLUDE_FILES_NAMES = ['compile.d.ts', 'compile.d.ts.map', 'compile.js', 'compile.js.map', 'fluke-9190a-frontend.js'];
 
-const MODULE_ROOT_PATH = path.join(__dirname, '..');
-const ASSETS_ROOT_DIR_PATH = path.join(MODULE_ROOT_PATH, 'assets');
-const BUILD_ROOT_DIR_PATH = path.join(MODULE_ROOT_PATH, 'build');
+const MODULE_ROOT_PATH = path.join(__dirname, '..', '..');
+const BUILD_ROOT_DIR_PATH = path.join(MODULE_ROOT_PATH, 'dist');
 
 const SRC_ROOT_DIR_PATH = path.join(MODULE_ROOT_PATH, 'src');
-const PACKAGE_JSON_SRC_FILE_PATH = path.join(ASSETS_ROOT_DIR_PATH, 'package.json');
+const PACKAGE_JSON_SRC_FILE_PATH = path.join(MODULE_ROOT_PATH, 'package.json');
 const PACKAGE_JSON_DST_FILE_PATH = path.join(BUILD_ROOT_DIR_PATH, 'package.json');
-const FRONTEND_HTML_SRC_FILE_PATH = path.join(SRC_ROOT_DIR_PATH, 'node-red-contrib-fluke9190a.hbs');
-const FRONTEND_HTML_DST_FILE_PATH = path.join(BUILD_ROOT_DIR_PATH, 'node-red-contrib-fluke9190a.html');
-const FRONTEND_JS_SRC_FILE_PATH = path.join(BUILD_ROOT_DIR_PATH, 'node-red-contrib-fluke9190a-frontend.js');
+const FRONTEND_HTML_SRC_FILE_PATH = path.join(SRC_ROOT_DIR_PATH, 'fluke-9190a.hbs');
+const FRONTEND_HTML_DST_FILE_PATH = path.join(BUILD_ROOT_DIR_PATH, 'fluke-9190a.html');
+const FRONTEND_JS_SRC_FILE_PATH = path.join(BUILD_ROOT_DIR_PATH, 'fluke-9190a-frontend.js');
 
 const readSourceFile = async (filePath: string) => {
   const frontendHtmlFileContentsBuffer = await fs.promises.readFile(filePath);

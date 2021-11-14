@@ -2,7 +2,7 @@ import { EditorRED } from 'node-red';
 
 declare const RED: EditorRED;
 
-RED.nodes.registerType('node-red-contrib-fluke9190a', {
+RED.nodes.registerType('fluke-9190a', {
   category: 'function',
   color: '#a6bbcf',
   defaults: {
@@ -12,6 +12,6 @@ RED.nodes.registerType('node-red-contrib-fluke9190a', {
   outputs: 1,
   icon: 'file.png',
   label: function () {
-    return this.name || 'node-red-contrib-fluke9190a';
+    return this.name || 'fluke-9190a';
   }
 });
