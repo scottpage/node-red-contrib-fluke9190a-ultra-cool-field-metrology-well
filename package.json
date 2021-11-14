@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-fluke9190a-ultra-cool-field-metrology-well",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Node-RED node to control and monitor a Fluke 9190A Ultra-Cool Field Metrology Well.",
   "scripts": {
     "clean:build": "rm -rf ./build",
