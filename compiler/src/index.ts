@@ -14,14 +14,14 @@ const FRONTEND_HTML_SRC_FILE_PATH = path.join(SRC_ROOT_DIR_PATH, 'fluke-9190a.hb
 const FRONTEND_HTML_DST_FILE_PATH = path.join(BUILD_ROOT_DIR_PATH, 'fluke-9190a.html');
 const FRONTEND_JS_SRC_FILE_PATH = path.join(BUILD_ROOT_DIR_PATH, 'fluke-9190a-frontend.js');
 
-const readSourceFile = async (filePath: string) => {
+const readFileContents = async (filePath: string) => {
   const frontendHtmlFileContentsBuffer = await fs.promises.readFile(filePath);
   const frontendHtmlFileContents = frontendHtmlFileContentsBuffer.toString();
   return frontendHtmlFileContents;
 };
 
-const readSourceFrontendHtmlFile = async () => readSourceFile(FRONTEND_HTML_SRC_FILE_PATH);
-const readSourceFrontendJSFile = async () => readSourceFile(FRONTEND_JS_SRC_FILE_PATH);
+const readSourceFrontendHtmlFile = async () => readFileContents(FRONTEND_HTML_SRC_FILE_PATH);
+const readSourceFrontendJSFile = async () => readFileContents(FRONTEND_JS_SRC_FILE_PATH);
 
 const injectFrontendHtmlScript = async () => {
   let frontendJSFileContents = await readSourceFrontendJSFile();
